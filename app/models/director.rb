@@ -2,7 +2,7 @@
 #
 # Table name: directors
 #
-#  id         :integer          not null, primary key
+#  id         :bigint           not null, primary key
 #  bio        :text
 #  dob        :date
 #  image      :string
