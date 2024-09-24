@@ -39,4 +39,21 @@ class ActorsController < ApplicationController
 
     redirect_to("/actors", { :notice => "Actor deleted successfully." })
   end
+
+  def update
+    update_id = params.fetch("path_id")
+    update_candidate = Actor.where({id: update_id}).at(0)
+
+    update_candidate.name = params.fetch("query_name")
+    update_candidate.dob = params.fetch("query_dob")
+    update_candidate.bio = params.fetch("query_bio")
+    update_candidate.image = params.fetch("query_image")
+
+    if update_candidate.valid?
+      update_candidate.save
+      redirect_to("/actors/#{update_id}", { :notice => "Actor updated successfully." })
+    else
+      redirect_to("/actors/#{update_id}", { :notice => "Actor failed to update successfully." })
+    end
+  end
 end
