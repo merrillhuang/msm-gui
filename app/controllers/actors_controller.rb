@@ -30,4 +30,13 @@ class ActorsController < ApplicationController
       redirect_to("/actors", { :notice => "Actor failed to create successfully." })
     end
   end
+
+  def destroy
+    delete_id = params.fetch("path_id")
+    delete_candidate = Actor.where({id: delete_id}).at(0)
+
+    delete_candidate.destroy
+
+    redirect_to("/actors", { :notice => "Actor deleted successfully." })
+  end
 end
