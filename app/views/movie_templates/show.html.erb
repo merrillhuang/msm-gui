@@ -66,14 +66,14 @@
     Created at
   </dt>
   <dd>
-    <%= @the_movie.created_at %>
+    <%= time_ago_in_words(@the_movie.created_at) %> ago
   </dd>
 
   <dt>
     Updated at
   </dt>
   <dd>
-    <%= @the_movie.updated_at %>
+    <%= time_ago_in_words(@the_movie.updated_at) %> ago
   </dd>
 </dl>
 
