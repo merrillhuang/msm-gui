@@ -2,9 +2,18 @@
   Actor #<%= @the_actor.id %> details
 </h1>
 
-<a href="/actors">
-  Go back
-</a>
+<div>
+  <a href="/actors">
+    Go back
+  </a>
+</div>
+<div>
+  <a href="/delete_actor/<%= @the_actor.id %>">
+    Delete actor
+  </a>
+</div>
+
+<hr>
 
 <hr>
 
