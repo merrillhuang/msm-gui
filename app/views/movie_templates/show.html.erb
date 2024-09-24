@@ -50,11 +50,16 @@
   <dd>
     <% dir_id = @the_movie.director_id %>
     
-    <% matching_directors = Director.where({ :id => dir_id }) %>
-    
-    <% the_director = matching_directors.at(0) %>
+    <% matching_director = Director.where({ :id => @the_movie.director_id }) %>
+      
+      <% if matching_director.size != 0 %>
 
-    <%= the_director.name %>
+        <% the_director = matching_director.at(0) %>
+
+        <%= the_director.name %>
+      <% else %>
+        Uh oh! We weren't able to find a director for this movie.
+      <% end %>
   </dd>
 
   <dt>

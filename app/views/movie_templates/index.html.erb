@@ -32,6 +32,7 @@
   <button>Create movie</button>
 </form>
 
+<hr>
 
 <table border="1">
   <tr>
@@ -80,9 +81,14 @@
     <td>
       <% matching_directors = Director.where({ :id => a_movie.director_id }) %>
       
-      <% the_director = matching_directors.at(0) %>
+      <% if matching_directors.size != 0 %>
 
-      <%= the_director.name %>
+        <% the_director = matching_directors.at(0) %>
+
+        <%= the_director.name %>
+      <% else %>
+        Uh oh! We weren't able to find a director for this movie.
+      <% end %>
     </td>
 
     <td>
