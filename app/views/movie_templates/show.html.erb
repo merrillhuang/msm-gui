@@ -26,12 +26,11 @@
   </div>
   <div>
     <label for="duration_box">Duration</label>
-    <input type="text" id="duration_box" name="query_duration" value="<%= @the_movie.duration %>"></textarea>
+    <input type="text" id="duration_box" name="query_duration" value="<%= @the_movie.duration %>"></label>
   </div>
   <div>
     <label for="description_box">Description</label>
-    <textarea id="description_box" name="query_description" rows="3"><%= @the_movie.description %>
-    </textarea>
+    <textarea id="description_box" name="query_description" rows="3"><%= @the_movie.description %></textarea>
   </div>
   <div>
     <label for="image_url_box">Image</label>
@@ -41,7 +40,7 @@
     <label for="director_id_box">Director ID</label>
     <input type="text" id="director_id_box" name="query_director_id" value="<%= @the_movie.director_id %>"></input>
   </div>
-  <button>Create movie</button>
+  <button>Update movie</button>
 </form>
 
 <hr>
