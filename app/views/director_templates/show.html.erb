@@ -71,14 +71,14 @@
     Created at
   </dt>
   <dd>
-    <%= @the_director.created_at %>
+    <%= time_ago_in_words(@the_director.created_at) %>
   </dd>
 
   <dt>
     Updated at
   </dt>
   <dd>
-    <%= @the_director.updated_at %>
+    <%= time_ago_in_words(@the_director.updated_at) %>
   </dd>
 </dl>
 
