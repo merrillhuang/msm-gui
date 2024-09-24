@@ -55,9 +55,9 @@ class MoviesController < ApplicationController
 
     if update_candidate.valid?
       update_candidate.save
-      redirect_to("/movies", { :notice => "Movie updated successfully." })
+      redirect_to("/movies/#{update_id}", { :notice => "Movie updated successfully." })
     else
-      redirect_to("/movies", { :notice => "Movie failed to update successfully." })
+      redirect_to("/movies/#{update_id}", { :notice => "Movie failed to update successfully." })
     end
   end
 end
